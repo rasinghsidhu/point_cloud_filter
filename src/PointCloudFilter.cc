@@ -66,20 +66,20 @@ bool PointCloudFilter::Initialize(const ros::NodeHandle& n) {
 
 bool PointCloudFilter::LoadParameters(const ros::NodeHandle& n) {
   // Load filtering parameters.
-  if (!pu::Get("filtering/grid_filter", params_.grid_filter)) return false;
-  if (!pu::Get("filtering/grid_res", params_.grid_res)) return false;
+  if (!pu::get("filtering/grid_filter", params_.grid_filter)) return false;
+  if (!pu::get("filtering/grid_res", params_.grid_res)) return false;
 
-  if (!pu::Get("filtering/random_filter", params_.random_filter)) return false;
-  if (!pu::Get("filtering/decimate_percentage", params_.decimate_percentage))
+  if (!pu::get("filtering/random_filter", params_.random_filter)) return false;
+  if (!pu::get("filtering/decimate_percentage", params_.decimate_percentage))
     return false;
 
-  if (!pu::Get("filtering/outlier_filter", params_.outlier_filter)) return false;
-  if (!pu::Get("filtering/outlier_std", params_.outlier_std)) return false;
-  if (!pu::Get("filtering/outlier_knn", params_.outlier_knn)) return false;
+  if (!pu::get("filtering/outlier_filter", params_.outlier_filter)) return false;
+  if (!pu::get("filtering/outlier_std", params_.outlier_std)) return false;
+  if (!pu::get("filtering/outlier_knn", params_.outlier_knn)) return false;
 
-  if (!pu::Get("filtering/radius_filter", params_.radius_filter)) return false;
-  if (!pu::Get("filtering/radius", params_.radius)) return false;
-  if (!pu::Get("filtering/radius_knn", params_.radius_knn)) return false;
+  if (!pu::get("filtering/radius_filter", params_.radius_filter)) return false;
+  if (!pu::get("filtering/radius", params_.radius)) return false;
+  if (!pu::get("filtering/radius_knn", params_.radius_knn)) return false;
 
   // Cap to [0.0, 1.0].
   params_.decimate_percentage =
